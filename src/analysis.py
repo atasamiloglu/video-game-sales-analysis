@@ -9,4 +9,14 @@ def top_selling_games(df):
         ascending=False
     ).head(10)
 
+def top_platforms(df):
+    top_platforms = (
+        df.groupby("Platform")["Global_Sales"]
+        .sum()
+        .sort_values(ascending=False)
+        .head(10)
+    )
+
+    return top_platforms
+
     return top_games
