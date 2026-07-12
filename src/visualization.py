@@ -5,7 +5,7 @@ plt.style.use("ggplot")
 plt.rcParams["figure.figsize"] = (10, 6)
 
 def plot_top_selling_games(top_games):
-    
+
     plt.figure(figsize=(10, 6))
 
     plt.bar(top_games["Name"], top_games["Global_Sales"])
@@ -57,3 +57,20 @@ def plot_top_genres(genres):
     plt.savefig("images/global_sales_by_genre.png")
 
     plt.show()    
+
+def plot_top_publishers(publishers):
+    plt.figure(figsize=(10, 6))
+
+    plt.barh(publishers.index, publishers.values)
+
+    plt.title("Top 10 Publishers by Global Sales")
+    plt.xlabel("Global Sales (Millions)")
+    plt.ylabel("Publisher")
+
+    plt.gca().invert_yaxis()
+
+    plt.tight_layout()
+
+    plt.savefig("images/top_10_publishers.png")
+
+    plt.show() 

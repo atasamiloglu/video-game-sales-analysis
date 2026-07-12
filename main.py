@@ -1,7 +1,7 @@
 from src.data_loader import load_data
 from src.data_cleaning import inspect_data, clean_data
-from src.analysis import summary_statistics,top_selling_games, top_platforms, top_genres
-from src.visualization import plot_top_genres, plot_top_selling_games, plot_top_platforms
+from src.analysis import summary_statistics,top_selling_games, top_platforms, top_genres, top_publishers
+from src.visualization import plot_top_genres, plot_top_selling_games, plot_top_platforms, plot_top_publishers
 
 def main():
     df = load_data("data/video_games_sales.csv")
@@ -19,9 +19,15 @@ def main():
 
     #plot_top_platforms(top_platforms(df))
 
-    print(top_genres(df))
+    #print(top_genres(df))
     
-    plot_top_genres(top_genres(df))
+    #plot_top_genres(top_genres(df))
+
+    publishers = top_publishers(df)
+
+    print(publishers)
+
+    plot_top_publishers(publishers)
 
 if __name__ == "__main__":
     main()

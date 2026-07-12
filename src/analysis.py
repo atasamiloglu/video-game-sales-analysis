@@ -30,4 +30,13 @@ def top_genres(df):
 
     return genres
 
+def top_publishers(df):
+    publishers = (
+        df.groupby("Publisher")["Global_Sales"]
+        .sum()
+        .sort_values(ascending=False)
+        .head(10)
+    )
+
+    return publishers
     
