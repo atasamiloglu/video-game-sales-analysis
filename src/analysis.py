@@ -39,4 +39,13 @@ def top_publishers(df):
     )
 
     return publishers
+
+def games_by_year(df):
+    games = (
+        df.groupby("Year")
+        .size()
+        .sort_index()
+    )
+
+    return games
     

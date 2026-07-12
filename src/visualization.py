@@ -73,4 +73,21 @@ def plot_top_publishers(publishers):
 
     plt.savefig("images/top_10_publishers.png")
 
-    plt.show() 
+    plt.show()
+
+def plot_games_by_year(games):
+    plt.figure(figsize=(10, 6))
+
+    plt.plot(games.index, games.values, marker="o")
+
+    plt.title("Number of Games Released by Year")
+    plt.xlabel("Year")
+    plt.ylabel("Number of Games")
+
+    plt.grid(True)
+
+    plt.tight_layout()
+
+    plt.savefig("images/games_released_by_year.png")
+
+    plt.show()     
