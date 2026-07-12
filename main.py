@@ -1,7 +1,10 @@
 from src.data_loader import load_data
 from src.data_cleaning import inspect_data, clean_data
-from src.analysis import summary_statistics,top_selling_games, top_platforms, top_genres, top_publishers, games_by_year, global_sales_by_year
-from src.visualization import plot_top_genres, plot_top_selling_games, plot_top_platforms, plot_top_publishers, plot_games_by_year, plot_global_sales_by_year
+from src.analysis import summary_statistics,top_selling_games, top_platforms, top_genres
+from src.analysis import top_publishers, games_by_year, global_sales_by_year, correlation_matrix
+from src.visualization import plot_correlation_heatmap, plot_top_genres, plot_top_selling_games, plot_top_platforms, plot_top_publishers
+from src.visualization import plot_games_by_year, plot_global_sales_by_year
+
 
 def main():
     df = load_data("data/video_games_sales.csv")
@@ -35,12 +38,21 @@ def main():
 
     #plot_games_by_year(games)
 
-    print(global_sales_by_year(df))
+    #print(global_sales_by_year(df))
 
-    plot_global_sales_by_year(global_sales_by_year(df))
+    #plot_global_sales_by_year(global_sales_by_year(df))
+
+    corr = correlation_matrix(df)
+
+    print(corr)
+
+    corr = correlation_matrix(df)
+
+    corr = correlation_matrix(df)
+
+    plot_correlation_heatmap(corr)
 
     
-
     
 
     

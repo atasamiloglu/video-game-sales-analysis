@@ -107,4 +107,22 @@ def plot_global_sales_by_year(sales):
 
     plt.savefig("images/global_sales_by_year.png")
 
-    plt.show()         
+    plt.show()
+
+def plot_correlation_heatmap(corr):
+    plt.figure(figsize=(10, 8))
+
+    plt.imshow(corr, cmap="coolwarm", interpolation="nearest")
+
+    plt.colorbar(label="Correlation")
+
+    plt.xticks(range(len(corr.columns)), corr.columns, rotation=45, ha="right")
+    plt.yticks(range(len(corr.columns)), corr.columns)
+
+    plt.title("Correlation Heatmap")
+
+    plt.tight_layout()
+
+    plt.savefig("images/correlation_heatmap.png")
+
+    plt.show()             

@@ -57,4 +57,7 @@ def global_sales_by_year(df):
     )
 
     return sales
+
+def correlation_matrix(df):
+    return df.corr(numeric_only=True)
     
