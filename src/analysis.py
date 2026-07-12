@@ -48,4 +48,13 @@ def games_by_year(df):
     )
 
     return games
+
+def global_sales_by_year(df):
+    sales = (
+        df.groupby("Year")["Global_Sales"]
+        .sum()
+        .sort_index()
+    )
+
+    return sales
     

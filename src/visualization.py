@@ -90,4 +90,21 @@ def plot_games_by_year(games):
 
     plt.savefig("images/games_released_by_year.png")
 
-    plt.show()     
+    plt.show()
+
+def plot_global_sales_by_year(sales):
+    plt.figure(figsize=(10, 6))
+
+    plt.plot(sales.index, sales.values, marker="o")
+
+    plt.title("Global Video Game Sales by Year")
+    plt.xlabel("Year")
+    plt.ylabel("Global Sales (Millions)")
+
+    plt.grid(True)
+
+    plt.tight_layout()
+
+    plt.savefig("images/global_sales_by_year.png")
+
+    plt.show()         
